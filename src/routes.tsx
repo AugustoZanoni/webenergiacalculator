@@ -5,7 +5,7 @@ import Login from './pages/Login';
 
 function PrivateRoute() {
   //Authenticated
-  return false ? <Outlet /> : <Navigate to="/login" />;
+  return true ? <Outlet /> : <Navigate to="/login" />;
 }
 
 const routes = () => {
