@@ -1,10 +1,10 @@
 import React from 'react';
-import { Container, Paper, Typography, Button, TextField, InputAdornment, Grid } from '@mui/material';
+import { Paper, Typography, Button, TextField, InputAdornment, Grid } from '@mui/material';
 import AccountCircle from '@mui/icons-material/Mail';
 
 const Login = () => {
     return (
-        <Container fixed sx={{ height: '100vh' }}>
+        <Grid container sx={{ bgcolor: 'background.default', height: '100vh'}}>
             <Paper sx={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
                 <Grid p={2} container spacing={2}>
                     <Grid item xs={12}>
@@ -28,7 +28,7 @@ const Login = () => {
                     </Grid>
                 </Grid>
             </Paper>
-        </Container>
+        </Grid>
     )
 }
 
