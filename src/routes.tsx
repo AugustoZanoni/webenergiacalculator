@@ -1,11 +1,13 @@
-import React from 'react';
-import { Routes, Route, BrowserRouter, MemoryRouter, Link, Navigate, Outlet } from "react-router-dom";
+import React, { useEffect } from 'react';
+import { Routes, Route, MemoryRouter, Navigate, Outlet } from "react-router-dom";
+import { AuthContext } from './providers/AuthProvider';
 import App from './pages/App';
 import Login from './pages/Login';
 
 function PrivateRoute() {
   //Authenticated
-  return true ? <Outlet /> : <Navigate to="/login" />;
+  const { email } = React.useContext(AuthContext);
+  return email ? <Outlet /> : <Navigate to="/login" />;
 }
 
 const routes = () => {
