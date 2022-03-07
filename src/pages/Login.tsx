@@ -1,9 +1,11 @@
 import React from 'react';
 import { Paper, Typography, Button, TextField, InputAdornment, Grid } from '@mui/material';
+import { useNavigate } from "react-router-dom";
 import AccountCircle from '@mui/icons-material/Mail';
 import { AuthContext } from '../providers/AuthProvider';
 
 const Login = () => {
+    let navigate = useNavigate();
     const { Singin } = React.useContext(AuthContext);
     const [ email, setEmail ] = React.useState<string>('');
     return (
@@ -28,7 +30,7 @@ const Login = () => {
                         />
                     </Grid>
                     <Grid item xs={12}>
-                        <Button sx={{width: '100%'}} variant='contained' onClick={()=> {Singin(email)}}>Entrar</Button>
+                        <Button sx={{width: '100%'}} variant='contained' onClick={()=> {Singin(email); navigate('/'); }}>Entrar</Button>
                     </Grid>
                 </Grid>
             </Paper>

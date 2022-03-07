@@ -8,6 +8,7 @@
     "@emotion/styled": "^11.8.1",
     "@mui/icons-material": "^5.4.4",
     "@mui/material": "^5.4.4",
+    "@mui/x-data-grid": "^5.6.0",
     "@types/jest": "^27.4.1",
     "@types/node": "^16.11.26",
     "@types/react": "^17.0.39",

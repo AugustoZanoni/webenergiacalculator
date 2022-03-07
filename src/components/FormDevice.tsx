@@ -23,7 +23,7 @@ const FormDevice = () => {
             <TextField
                 label="Potência"
             />
-            <Button variant='contained'>Adicionar</Button>
+            <Button variant='contained' sx={{height: 56}}>Adicionar</Button>
         </Box>
     )
 }
