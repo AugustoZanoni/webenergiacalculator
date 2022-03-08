@@ -1,7 +1,9 @@
 import React from 'react';
 import { Box, Button, TextField } from '@mui/material';
+import { useAppContext } from '../providers/AppProvider';
 
 const FormDevice = () => {
+    const { addDevice } = useAppContext();
     return (
         <Box
             component="form"
@@ -23,7 +25,7 @@ const FormDevice = () => {
             <TextField
                 label="Potência"
             />
-            <Button variant='contained'>Adicionar</Button>
+            <Button variant='contained' sx={{height: 56}} onClick={(ev) => addDevice({ id: 1, name: "TV", power: 100, time: 5, quantity: 2 })}>Adicionar</Button>
         </Box>
     )
 }
