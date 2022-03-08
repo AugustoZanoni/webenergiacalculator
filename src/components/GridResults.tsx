@@ -1,5 +1,7 @@
 import { FC } from 'react';
-import { DataGrid, GridRowsProp, GridColDef } from "@mui/x-data-grid";
+import { Button } from '@mui/material';
+import DeleteIcon from '@mui/icons-material/Delete';
+import { DataGrid, GridRowsProp, GridColDef, GridApi, GridCellValue } from "@mui/x-data-grid";
 
 const columns: GridColDef[] = [
     { field: "id", hide: true },
@@ -8,7 +10,7 @@ const columns: GridColDef[] = [
     { field: "time", headerName: "Uso Diário", width: 150 },
     { field: "power", headerName: "Potência", width: 150 },
     { field: "consumption", headerName: "KWh/mês", width: 150 },
-    { field: "total", headerName: "Consumo/Total", width: 150 },
+    { field: "total", headerName: "Consumo/Total", width: 150 },    
   ];
 
   const rowss: GridRowsProp = [

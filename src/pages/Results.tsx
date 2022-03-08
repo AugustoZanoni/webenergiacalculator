@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { EventHandler, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { Grid, Box, Button, TextField, Typography } from '@mui/material';
 import GridResults from '../components/GridResults';
 
 const Results = () => {
     let navigate = useNavigate();
+    const [tarifa, setTarifa] = useState(0.0);
+
     return (
         <Grid container spacing={2} p={2}>
             <Grid item xs={12}>
@@ -18,8 +20,10 @@ const Results = () => {
                 >
                     <TextField
                         label="Tarifa"
+                        type='number'
+                        onChange={(ev)=> setTarifa( parseFloat( ev.target.value ))}
                     />
-                    <Button variant='contained' sx={{height: 56}}>Adicionar</Button>
+                    {/* <Button variant='contained' sx={{height: 56}} onClick={() => handleDefineTarifa()}>Definir</Button> */}
                 </Box>
             </Grid>
             <Grid item xs={12}><Typography variant='h4' textAlign='center' p={2}>Total Estimado</Typography></Grid>
@@ -31,7 +35,7 @@ const Results = () => {
             <Grid container xs={12} px={2}>                
                 <Grid item xs={2}><Typography variant='h6' color='primary'>30.00 kWh</Typography></Grid>
                 <Grid item xs={2}><Typography variant='h6' color='primary'>R$ 25.69</Typography></Grid>
-                <Grid item xs={2}><Typography variant='h6' color='primary'>R$ 0.856440</Typography></Grid>
+                <Grid item xs={2}><Typography variant='h6' color='primary'>R$ {tarifa}</Typography></Grid>
             </Grid>
             <Grid item xs={12}>                
                 <Box sx={{ bgcolor: 'white', height: 300, width: "100%" }}>

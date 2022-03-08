@@ -9,7 +9,7 @@ import Results from './pages/Results';
 function PrivateRoute() {
   //Authenticated
   const { email } = useAuthContext();
-  return email ? <Outlet /> : <Navigate to="/login" />;
+  return email ? <Outlet /> : <Login />;
 }
 
 const routes = () => {
